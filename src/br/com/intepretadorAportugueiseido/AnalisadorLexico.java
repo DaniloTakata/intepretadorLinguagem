@@ -14,8 +14,10 @@ public class AnalisadorLexico {
 
     public static void main(String [] args) {
 
-        String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3" +
-                "\\Exemplo01_20230907150340.apt";
+//        String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3" +
+//                "\\Exemplo01_20230907150340.apt";
+        String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3\\interpretador-POCPOC" +
+                "\\interpretadorPoc\\src\\br\\com\\intepretadorAportugueiseido\\arquivos\\Exemplo01_20230907150340.apt";
         Sintaxes sintaxes = new Sintaxes();
         List<Token> tokens = new ArrayList<>();
         List<Simbolo> simbolos = new ArrayList<>();
