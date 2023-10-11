@@ -14,8 +14,6 @@ public class AnalisadorLexico {
 
     public static void main(String [] args) {
 
-//        String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3" +
-//                "\\Exemplo01_20230907150340.apt";
         String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3\\interpretador-POCPOC" +
                 "\\interpretadorPoc\\src\\br\\com\\intepretadorAportugueiseido\\arquivos\\Exemplo01_20230907150340.apt";
         Sintaxes sintaxes = new Sintaxes();
@@ -30,7 +28,7 @@ public class AnalisadorLexico {
             int id_ts = 1;
 
             while ((linha = leitor.readLine()) != null) {
-                linha = linha.replaceAll("'.*", "");
+                linha = (linha.replaceAll("'.*", "")).replaceAll("\t", "");
 
                 if (!linha.trim().startsWith("'") && !linha.equals("")) {
 
@@ -98,6 +96,19 @@ public class AnalisadorLexico {
             for (Simbolo simbolo: simbolos) {
                 System.out.println(simbolo.toString());
             }
+            System.out.println("Análise Léxica concluída com sucesso!\n\n");
+
+            List<String> tokensStringForm = new ArrayList<>();
+
+            for (Token tokenAtual: tokens) {
+                tokensStringForm.add(tokenAtual.getNome());
+                System.out.println(tokenAtual.getNome());
+            }
+
+            AnalisadorSintatico analisador = new AnalisadorSintatico(tokensStringForm);
+            System.out.println("Inicia analisarPrograma()");
+            analisador.analisarPrograma();
+            System.out.println("Análise sintática concluída com sucesso.");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
