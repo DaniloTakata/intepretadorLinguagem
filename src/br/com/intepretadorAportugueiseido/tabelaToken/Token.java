@@ -5,18 +5,18 @@ public class Token {
     private int id;
     private int linha;
     private int coluna;
-    private String nome;
+    private String imagem;
     private String classe;
 
     private int id_ts;
 
     public Token() {}
 
-    public Token(int id, int linha, int coluna, String nome, String classe, int id_ts) {
+    public Token(int id, int linha, int coluna, String imagem, String classe, int id_ts) {
         this.id = id;
         this.linha = linha;
         this.coluna = coluna;
-        this.nome = nome;
+        this.imagem = imagem;
         this.classe = classe;
         this.id_ts = id_ts;
     }
@@ -45,12 +45,12 @@ public class Token {
         this.coluna = coluna;
     }
 
-    public String getNome() {
-        return nome;
+    public String getImagem() {
+        return imagem;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
     public String getClasse() {
@@ -75,7 +75,7 @@ public class Token {
                 "id=" + id +
                 ", linha=" + linha +
                 ", coluna=" + coluna +
-                ", nome='" + nome + '\'' +
+                ", nome='" + imagem + '\'' +
                 ", classe='" + classe + '\'' +
                 ", id_ts=" + id_ts +
                 '}';

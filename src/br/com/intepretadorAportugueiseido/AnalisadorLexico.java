@@ -12,10 +12,9 @@ import java.util.List;
 
 public class AnalisadorLexico {
 
-    public static void main(String [] args) {
+    public List<Token> analiseLexica() {
 
-        String caminhoArquivo = "E:\\FACULDADE\\8 Período\\Teoria da Computação & Compiladores\\A3\\interpretador-POCPOC" +
-                "\\interpretadorPoc\\src\\br\\com\\intepretadorAportugueiseido\\arquivos\\Exemplo01_20230907150340.apt";
+        String caminhoArquivo = "/Users/alexsandermartins/intepretadorLinguagem/src/br/com/intepretadorAportugueiseido/arquivos/Exemplo01_20230907150340.apt";
         Sintaxes sintaxes = new Sintaxes();
         List<Token> tokens = new ArrayList<>();
         List<Simbolo> simbolos = new ArrayList<>();
@@ -52,7 +51,7 @@ public class AnalisadorLexico {
                                 } else if (sintaxes.ehDelimitadoresESeparadoresa(elementoAtual)) {
                                     indiceElementoAtual += 2;
                                     tokens.add(new Token(id, contador, indiceElementoAtual,
-                                            elementoAtual, "Delimitador/Separador", 0));
+                                            elementoAtual, "Delimitador", 0));
                                     id++;
                                 } else if (sintaxes.ehPalavraReservada(elementoAtual)) {
                                     indiceElementoAtual += 2;
@@ -82,38 +81,25 @@ public class AnalisadorLexico {
                         }
                     }
 
-                    System.out.println(linha + "   ----------> " + contador);
                     contador ++;
                 }
             }
 
-            for (Token token : tokens) {
-                System.out.println(token.toString());
-            }
 
-            System.out.println("\n\n");
 
-            for (Simbolo simbolo: simbolos) {
-                System.out.println(simbolo.toString());
-            }
-            System.out.println("Análise Léxica concluída com sucesso!\n\n");
 
             List<String> tokensStringForm = new ArrayList<>();
 
             for (Token tokenAtual: tokens) {
-                tokensStringForm.add(tokenAtual.getNome());
-                System.out.println(tokenAtual.getNome());
+                tokensStringForm.add(tokenAtual.getImagem());
+
             }
 
-            AnalisadorSintatico analisador = new AnalisadorSintatico(tokensStringForm);
-            System.out.println("Inicia analisarPrograma()");
-            analisador.analisarPrograma();
-            System.out.println("Análise sintática concluída com sucesso.");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-
+    return tokens;
     }
 }

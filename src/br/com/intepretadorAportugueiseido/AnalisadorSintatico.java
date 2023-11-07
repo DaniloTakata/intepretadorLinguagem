@@ -33,8 +33,6 @@ public class AnalisadorSintatico {
     }
 
     private void analisarComandos() {
-        System.out.println("Tamanho: " + tokens.size());
-        System.out.println("IndiceAtual: " + indiceTokenAtual);
         while (indiceTokenAtual < tokens.size()) {
             analisarComando();
         }
