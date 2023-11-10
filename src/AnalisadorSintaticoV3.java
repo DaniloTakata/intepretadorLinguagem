@@ -2,11 +2,11 @@ import br.com.intepretadorAportugueiseido.tabelaToken.Token;
 
 import java.util.List;
 
-public class AnalisadorSintaticoV2 {
+public class AnalisadorSintaticoV3 {
     private List<Token> tokens;
     private int index;
 
-    public AnalisadorSintaticoV2(List<Token> tokens) {
+    public AnalisadorSintaticoV3(List<Token> tokens) {
         this.tokens = tokens;
         this.index = 0;
     }
