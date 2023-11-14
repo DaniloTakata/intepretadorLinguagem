@@ -49,7 +49,7 @@ public class AnalisadorSintaticoV2 {
         Token token = getNextToken();
         if (token != null && token.getImagem().equals("(")) {
             comandoInterno();
-            token = getNextToken();
+//            token = getNextToken();
             if (token == null || !token.getImagem().equals(")")) {
                 throw new RuntimeException("Erro de sintaxe: Esperava ')'");
             }
