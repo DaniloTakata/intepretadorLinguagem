@@ -1,4 +1,4 @@
-package br.com.intepretadorAportugueiseido;
+package br.com.intepretadorAportugueiseido.models;
 
 public enum TipoNo {
 	comandos, comando, comando_interno,

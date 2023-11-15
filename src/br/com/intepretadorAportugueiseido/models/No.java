@@ -1,6 +1,4 @@
-package br.com.intepretadorAportugueiseido;
-
-import br.com.intepretadorAportugueiseido.tabelaToken.Token;
+package br.com.intepretadorAportugueiseido.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +9,8 @@ public class No {
 	private Token token;
 	private TipoNo tipo;
 	private List<No> filhos = new ArrayList<No>();
+
+	public No () {}
 
 	public void addFilho(No filho) {
 		filhos.add(filho);
