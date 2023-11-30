@@ -16,6 +16,10 @@ public class No {
 		filhos.add(filho);
 		filho.setPai(this);
 	}
+
+	public No getFilho(int i) {
+		return this.getFilhos().get(i);
+	}
 	
 	public No(TipoNo tipo) {
 		this.tipo = tipo;

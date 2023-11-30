@@ -1,5 +1,6 @@
 package br.com.intepretadorAportugueiseido;
 import br.com.intepretadorAportugueiseido.analisadores.AnalisadorLexico;
+import br.com.intepretadorAportugueiseido.analisadores.AnalisadorSemantico;
 import br.com.intepretadorAportugueiseido.analisadores.AnalisadorSintaticoGeradorArvore;
 import br.com.intepretadorAportugueiseido.tabela.TabelaSimbolos;
 
@@ -33,6 +34,13 @@ public class Main {
 		analisadorSintatico.analisar();
 		if(analisadorSintatico.temErros()) {
 			analisadorSintatico.printErros();
+			return;
+		}
+
+		AnalisadorSemantico analisadorSemantico = new AnalisadorSemantico(analisadorSintatico.getRaiz());
+		analisadorSemantico.analisar();
+		if (analisadorSemantico.temErros()) {
+			analisadorSemantico.printErros();
 			return;
 		}
 		

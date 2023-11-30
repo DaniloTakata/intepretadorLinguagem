@@ -42,4 +42,14 @@ public class TabelaSimbolos {
 		}
 		return false;
 	}
+
+	public static String getTipo(Token token) {
+		Simbolo simbolo = tabela.get(token.getIndiceTabSimb());
+		return simbolo.getTipo();
+	}
+
+	public static void setTipo(Token token, String tipo) {
+		Simbolo simbolo = tabela.get(token.getIndiceTabSimb());
+		simbolo.setTipo(tipo);
+	}
 }
