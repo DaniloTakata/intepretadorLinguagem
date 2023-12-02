@@ -5,4 +5,5 @@
 	* 4 - Vitor Hugo Queiroz
 	* 5 - Vinicius Miranda dos Santos Takata
 	* 6 - Wendel Lobato
+	* 7 - Johnny Guimarães
 */

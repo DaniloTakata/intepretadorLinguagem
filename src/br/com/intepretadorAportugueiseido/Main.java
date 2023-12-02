@@ -27,8 +27,6 @@ public class Main {
 		
 		analisadorLexico.mostraTokens();
 		
-		TabelaSimbolos.listaTabela();
-		
 		AnalisadorSintaticoGeradorArvore analisadorSintatico =
 				new AnalisadorSintaticoGeradorArvore(analisadorLexico.getTokens());
 		analisadorSintatico.analisar();
@@ -39,13 +37,17 @@ public class Main {
 
 		AnalisadorSemantico analisadorSemantico = new AnalisadorSemantico(analisadorSintatico.getRaiz());
 		analisadorSemantico.analisar();
-		if (analisadorSemantico.temErros()) {
-			analisadorSemantico.printErros();
-			return;
-		}
 		
 		System.out.println("\nMUITO BOM, ANÁLISE LÉXICA E SINTÁTICA OK!");
 
 		analisadorSintatico.mostraArvore(analisadorSintatico.getRaiz(), "", true);
+
+		if (analisadorSemantico.temErros()) {
+			analisadorSemantico.printErros();
+			return;
+		}
+
+		TabelaSimbolos.listaTabela();
+
 	}
 }
