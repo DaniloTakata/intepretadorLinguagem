@@ -3,15 +3,21 @@
 
 ( inteiro a1 b1 )
 ( real r1 )
-( enquanto ( > a1 10 )
-	( = a1 2 )
+( cadeia s1 )
+( = s1 "teste de cadeia" )
+( = r1 23.5 )
+( enquanto ( < a1 10 )
+	( = a1 ( + a1 1 ) )
 	( = b1 ( + b1 2 ) )
-	( imprime b1 )				'comando de escrita
+	( imprime "***************************************" )
+	( imprime b1 )	'comando de escrita
+	( imprime a1 )	'comando de escrita
 )
-( le a1 )  						'comando de leitura
+( imprime "entre com o valor de a1" )
+( le a1 )  'comando de leitura
 ( se ( == a1 b1 )
 	( ( = a1 2 ) ( = b1 3 ) ) 	'clausula verdade
 	( ( = a1 5 ) ( = b1 4 ) )	'clausula falsa
 )
-	
-
+( imprime b1 )
+( imprime a1 )
