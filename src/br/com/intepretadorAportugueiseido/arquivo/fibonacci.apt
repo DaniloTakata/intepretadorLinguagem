@@ -1,0 +1,25 @@
+( imprime "=-=-=-=-=-=-=-=-=-=-=-= Calculadora Fibonacci =-=-=-=-=-=-=-=-=-=-=-=" )
+( inteiro termo )
+( inteiro resultadoFibonacci )
+( inteiro valorPosicaoAnterior1 )
+( inteiro valorPosicaoAnterior2 )
+( = valorPosicaoAnterior1 1 )
+( = valorPosicaoAnterior2 1 )
+( imprime "Qual termo da sequência Fibonacci deseja calcular?" )
+( le termo )
+
+( se ( == termo 1 )
+	( ( = resultadoFibonacci 1 ) ( imprime "Resultado" ) ( imprime resultadoFibonacci ) ) 'clausula verdade
+	( ( se ( == termo 2 ) 'clausula falsa
+		( ( = resultadoFibonacci 1 ) ( imprime "Resultado" ) ( imprime resultadoFibonacci ) ) 'clausula verdade
+		( ( enquanto ( > termo 2 ) 'clausula falsa
+			( = resultadoFibonacci ( + valorPosicaoAnterior1 valorPosicaoAnterior2 ) )
+			( = valorPosicaoAnterior2 valorPosicaoAnterior1 )
+			( = valorPosicaoAnterior1 resultadoFibonacci )
+			( = termo ( - termo 1 ) )
+		)
+		( imprime resultadoFibonacci )
+    )
+)
+)
+)
