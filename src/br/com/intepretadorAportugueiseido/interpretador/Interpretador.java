@@ -1,12 +1,10 @@
 package br.com.intepretadorAportugueiseido.interpretador;
 
+
 import br.com.intepretadorAportugueiseido.models.No;
 import br.com.intepretadorAportugueiseido.models.Token;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 public class Interpretador {
 
@@ -365,8 +363,8 @@ public class Interpretador {
 
     private Object subtraiOperandos(List<String> operandos) {
         try {
-            float resultado = 0;
-            int contador = 0;
+            float resultado = Float.parseFloat(operandos.get(0));
+            int contador = 1;
             while (contador < operandos.size()) {
                 resultado = resultado - Float.parseFloat(operandos.get(contador));
                 contador++;
@@ -426,5 +424,4 @@ public class Interpretador {
             return resultado;
         }
     }
-
 }
